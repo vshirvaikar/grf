@@ -46,12 +46,12 @@ ForestOptions ForestTestUtilities::default_options(bool honesty,
       prune, alpha, imbalance_penalty, num_threads, seed, empty_clusters, samples_per_cluster);
 }
 
-ForestOptions ForestTestUtilities::custom_options(double alpha, double imbalance_penalty, uint min_node_size) {
+ForestOptions ForestTestUtilities::custom_options(uint num_trees, double imbalance_penalty, uint min_node_size) {
     bool honesty = true;
     size_t ci_group_size = 1;
     double honesty_fraction = 0.5;
     bool prune = true;
-    uint num_trees = 10;
+    double alpha = 0.05;
     double sample_fraction = ci_group_size > 1 ? 0.35 : 0.7;
     uint mtry = 3;
     std::vector<size_t> empty_clusters;

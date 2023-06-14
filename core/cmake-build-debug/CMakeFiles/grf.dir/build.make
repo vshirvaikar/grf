@@ -1340,7 +1340,6 @@ grf: CMakeFiles/grf.dir/test/tree/TreePruningUnitTest.cpp.o
 grf: CMakeFiles/grf.dir/test/utilities/FileTestUtilities.cpp.o
 grf: CMakeFiles/grf.dir/test/utilities/ForestTestUtilities.cpp.o
 grf: CMakeFiles/grf.dir/build.make
-grf: /usr/lib/libarmadillo.so
 grf: CMakeFiles/grf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Linking CXX executable grf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/grf.dir/link.txt --verbose=$(VERBOSE)
