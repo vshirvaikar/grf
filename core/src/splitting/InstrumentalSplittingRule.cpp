@@ -104,9 +104,15 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
   bool best_send_missing_left = true;
 
   for (auto& var : possible_split_vars) {
-    find_best_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
-                          sum_node_z, sum_node_z_squared, min_child_size, best_value,
-                          best_var, best_decrease, best_send_missing_left, responses_by_sample, samples);
+    if(imbalance_penalty == 100) {
+        find_glm_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
+                             sum_node_z, sum_node_z_squared, min_child_size, best_value,
+                             best_var, best_decrease, best_send_missing_left, responses_by_sample, samples);
+    } else {
+        find_best_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
+                              sum_node_z, sum_node_z_squared, min_child_size, best_value,
+                              best_var, best_decrease, best_send_missing_left, responses_by_sample, samples);
+    }
   }
 
   // Stop if no good split found
@@ -167,7 +173,7 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
             continue;
         }
 
-        double tstatistic = model.glm_fit(covariates, outcomes, "linear", 100, 0.001);
+        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 10, 0.001);
 
         if (tstatistic > best_decrease) {
             best_value = split_vals(i);
