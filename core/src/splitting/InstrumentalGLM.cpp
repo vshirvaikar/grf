@@ -97,6 +97,8 @@ namespace grf {
                 }
                 V = arma::inv(combo);
                 break;
+            } else {
+                return 0;
             }
         }
 
