@@ -19,7 +19,7 @@
 #define GRF_INSTRUMENTALGLM_H
 
 #include "commons/Data.h"
-#include <armadillo>
+#include "Eigen/Dense"
 
 namespace grf {
 
@@ -31,13 +31,16 @@ namespace grf {
 
         double dummy();
 
-        arma::colvec variance(std::string family, arma::colvec mu);
+	Eigen::VectorXd cwiseExp(Eigen::VectorXd input);
 
-        arma::colvec invlink(std::string family, arma::colvec mu);
+	Eigen::VectorXd variance(std::string family, Eigen::VectorXd mu);
 
-        arma::colvec invlink_prime(std::string family, arma::colvec eta);
+	Eigen::VectorXd invlink(std::string family, Eigen::VectorXd mu);
 
-        double glm_fit(arma::mat X, arma::colvec y, std::string family, int maxit, double tol);
+	Eigen::VectorXd invlink_prime(std::string family, Eigen::VectorXd eta);
+
+	double glm_fit(const Eigen::MatrixXd& X, const Eigen::VectorXd& y,
+		       std::string family, size_t maxit, double tol);
 
     private:
 

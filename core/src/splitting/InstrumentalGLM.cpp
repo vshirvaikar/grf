@@ -17,95 +17,103 @@
 
 #include <algorithm>
 #include <cmath>
-#include <armadillo>
-
 #include "InstrumentalGLM.h"
 
 namespace grf {
 
-    InstrumentalGLM::InstrumentalGLM(size_t dummy){ // constructor
-        this->counter = new size_t[dummy];
-    }
+InstrumentalGLM::InstrumentalGLM(size_t dummy){ // constructor
+    this->counter = new size_t[dummy];
+}
 
-    InstrumentalGLM::~InstrumentalGLM(){ // destructor
-        if (counter != nullptr) {
-            delete[] counter;
+InstrumentalGLM::~InstrumentalGLM(){ // destructor
+    if (counter != nullptr) {
+        delete[] counter;
+    }
+}
+
+double InstrumentalGLM::dummy(){
+    double output = (double) rand() / RAND_MAX;
+    return output;
+}
+
+Eigen::VectorXd InstrumentalGLM::cwiseExp(Eigen::VectorXd input){
+    return input.array().exp().matrix();
+}
+
+Eigen::VectorXd InstrumentalGLM::variance(std::string family, Eigen::VectorXd mu){
+    if(family == "logistic"){
+        return mu.cwiseProduct((1 - mu.array()).matrix());
+    } else if(family == "poisson"){
+        return mu;
+    }
+    return Eigen::VectorXd::Ones(mu.size());
+}
+
+Eigen::VectorXd InstrumentalGLM::invlink(std::string family, Eigen::VectorXd eta){
+    if(family == "logistic"){
+        Eigen::VectorXd denom = (eta.array().exp() + 1).matrix();
+        return cwiseExp(eta).cwiseQuotient(denom);
+    } else if(family == "poisson"){
+        return cwiseExp(eta);
+    }
+    return eta;
+}
+
+Eigen::VectorXd InstrumentalGLM::invlink_prime(std::string family, Eigen::VectorXd eta){
+    if(family == "logistic"){
+        Eigen::VectorXd denom = (eta.array().exp() + 1).pow(2).matrix();
+        return cwiseExp(eta).cwiseQuotient(denom);
+    } else if(family == "poisson"){
+        return cwiseExp(eta);
+    }
+    return Eigen::VectorXd::Ones(eta.size());
+}
+
+double InstrumentalGLM::glm_fit(const Eigen::MatrixXd& X, const Eigen::VectorXd& y,
+                                std::string family, size_t maxit, double tol) {
+
+    int n_cols = X.cols();
+    int n_rows = X.rows();
+    Eigen::VectorXd s = Eigen::VectorXd::Zero(n_cols);
+    Eigen::VectorXd s_old;
+    Eigen::VectorXd eta = Eigen::VectorXd::Ones(n_rows);
+    Eigen::HouseholderQR<Eigen::MatrixXd> qr(X);
+    Eigen::MatrixXd Q = qr.householderQ() * Eigen::MatrixXd::Identity(n_rows, n_cols);
+    Eigen::MatrixXd fullR = qr.matrixQR().triangularView<Eigen::Upper>();
+    Eigen::MatrixXd R = Eigen::MatrixXd::Identity(n_cols, n_rows) * fullR;
+    Eigen::MatrixXd V;
+    bool converged = false;
+
+    for (size_t i = 0; i < maxit; i++) {
+        s_old = s;
+        Eigen::VectorXd mu = invlink(family, eta);
+        Eigen::VectorXd mu_p = invlink_prime(family, eta);
+        Eigen::VectorXd z = eta + (y - mu).cwiseQuotient(mu_p);
+        Eigen::VectorXd W = mu_p.array().pow(2).matrix().cwiseQuotient(variance(family, mu));
+        Eigen::MatrixXd WQ = (Q.array().colwise() * W.array()).matrix();
+        Eigen::LLT<Eigen::MatrixXd> cholesky(Q.transpose() * WQ);
+        Eigen::VectorXd s1 = cholesky.matrixL().solve(Q.transpose() * W.cwiseProduct(z));
+        s = cholesky.matrixU().solve(s1);
+        eta = Q * s;
+
+        double error = (s - s_old).norm();
+        if (std::isnan(error)) {
+            break;
+        }
+        if (error < tol) {
+            V = (X.transpose() * W.asDiagonal() * X).inverse();
+            converged = true;
+            break;
         }
     }
 
-    double InstrumentalGLM::dummy(){
-        double output = (double) rand() / RAND_MAX;
-        return output;
+    if(!converged){
+        return 0;
     }
-
-    arma::colvec InstrumentalGLM::variance(std::string family, arma::colvec mu){
-        if(family == "logistic"){
-            return mu % (1.0 - mu);
-        } else if(family == "poisson"){
-            return mu;
-        }
-        return arma::ones<arma::colvec>(mu.n_elem);
-    }
-
-    arma::colvec InstrumentalGLM::invlink(std::string family, arma::colvec eta){
-        if(family == "logistic"){
-            return (arma::exp(eta) / (1.0 + arma::exp(eta)));
-        } else if(family == "poisson"){
-            return arma::exp(eta);
-        }
-        return eta;
-    }
-
-    arma::colvec InstrumentalGLM::invlink_prime(std::string family, arma::colvec eta){
-        if(family == "logistic"){
-            return arma::exp(eta) / arma::square(arma::exp(eta) + 1.0);
-        } else if(family == "poisson"){
-            return arma::exp(eta);
-        }
-        return arma::ones<arma::colvec>(eta.n_elem);
-    }
-
-    double InstrumentalGLM::glm_fit(arma::mat X, arma::colvec y, std::string family, int maxit, double tol) {
-
-        const int n_cols = X.n_cols;
-        const int n_rows = X.n_rows;
-        arma::mat Q, R;
-        arma::colvec s = arma::zeros<arma::colvec>(n_cols);
-        arma::colvec s_old;
-        arma::colvec eta = arma::ones<arma::colvec>(n_rows);
-        arma::qr_econ(Q, R, X);
-        arma::mat V;
-
-        for (int i = 0; i < maxit; i++) {
-            s_old = s;
-            const arma::colvec mu = invlink(family, eta);
-            const arma::colvec mu_p = invlink_prime(family, eta);
-            const arma::colvec z = eta + (y - mu) / mu_p;
-            const arma::colvec W = arma::square(mu_p) / variance(family, mu);
-            const arma::mat C = arma::chol(Q.t() * (Q.each_col() % W));
-            const arma::colvec s1 = arma::solve(arma::trimatl(C.t()), Q.t() * (W % z));
-            s = arma::solve(arma::trimatu(C), s1);
-            eta = Q * s;
-
-            const bool is_converged = std::sqrt(arma::accu(arma::square(s - s_old))) < tol;
-            if (is_converged) {
-                // std::cout << "iteration " << i << std::endl;
-                arma::mat Wd = arma::diagmat(W);
-                arma::mat combo = X.t() * Wd * X;
-                if(arma::det(combo) < 0.0001){
-                    return 0;
-                }
-                V = arma::inv(combo);
-                break;
-            } else {
-                return 0;
-            }
-        }
-
-        arma::colvec coeffs = arma::solve(arma::trimatu(R), Q.t() * eta);
-        arma::colvec stderrs = sqrt(V.diag());
-        arma::colvec tstats = coeffs / stderrs;
-        return abs(tstats(tstats.n_rows - 1));
-    }
+    Eigen::VectorXd coeffs = R.householderQr().solve(Q.transpose() * eta);
+    Eigen::VectorXd stderrs = V.diagonal().cwiseSqrt();
+    Eigen::VectorXd tstats = coeffs.cwiseQuotient(stderrs);
+    return abs(tstats(tstats.rows() - 1));
+}
 
 } // namespace grf

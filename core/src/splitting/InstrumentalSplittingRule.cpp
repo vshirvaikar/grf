@@ -17,7 +17,6 @@
 
 #include <algorithm>
 #include <cmath>
-#include <armadillo>
 
 #include "InstrumentalSplittingRule.h"
 #include "InstrumentalGLM.h"
@@ -151,32 +150,47 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
         return;
     }
 
-    arma::colvec outcomes = arma::colvec(num_samples);
-    arma::colvec treatments = arma::colvec(num_samples);
-    arma::colvec split_vals = arma::colvec(num_samples);
-    arma::mat covariates = data.prepare_glm(outcomes, treatments, split_vals, num_samples, sorted_samples, var);
+    Eigen::VectorXd outcomes = Eigen::VectorXd(num_samples);
+    Eigen::VectorXd treatments = Eigen::VectorXd(num_samples);
+    Eigen::VectorXd sorted_split_vals = Eigen::VectorXd(num_samples);
+    Eigen::MatrixXd covariates = data.prepare_glm(num_samples, sorted_samples, outcomes,
+                                                  treatments, sorted_split_vals, var);
+    covariates.conservativeResize(covariates.rows(), covariates.cols()+3);
+    covariates.col(covariates.cols()-3) = treatments;
+    covariates.col(covariates.cols()-2) = Eigen::VectorXd::Ones(num_samples);
+    covariates.col(covariates.cols()-1) = treatments;
+    size_t split_side_index = covariates.cols()-2;
+    size_t interaction_index = split_side_index+1;
 
-    size_t indicator_index = covariates.n_cols + 1;
-    size_t interaction_index = indicator_index + 1;
-    arma::colvec blanks = arma::colvec(num_samples).zeros();
-    covariates = arma::join_rows(covariates, treatments, blanks, blanks);
+    size_t n_left = 0;
+    size_t num_left_small_z = 0;
     InstrumentalGLM model(2);
-
     for(size_t i = 0; i < num_samples - 1; i++){
-        covariates(i, indicator_index) = 1;
-        covariates(i, interaction_index) = treatments(i);
-        if(split_vals(i) == split_vals(i+1)){
+        covariates(i, split_side_index) = 0;
+        covariates(i, interaction_index) = 0;
+        n_left++;
+        double z = treatments(i);
+        if(z < mean_node_z){
+            num_left_small_z++;
+        }
+
+        if(sorted_split_vals(i) == sorted_split_vals(i+1)){
             continue;
         }
-        arma::mat imbalance = arma::sum(covariates, 0);
-        if(abs(imbalance(indicator_index) - covariates.n_cols) < covariates.n_cols){
+        size_t num_left_large_z = n_left - num_left_small_z;
+        if (num_left_small_z < min_node_size || num_left_large_z < min_node_size) {
             continue;
+        }
+        size_t n_right = num_samples - n_left;
+        size_t num_right_small_z = num_node_small_z - num_left_small_z;
+        size_t num_right_large_z = n_right - num_right_small_z;
+        if (num_right_small_z < min_node_size || num_right_large_z < min_node_size) {
+            break;
         }
 
         double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 10, 0.001);
-
         if (tstatistic > best_decrease) {
-            best_value = split_vals(i);
+            best_value = sorted_split_vals(i);
             best_var = var;
             best_decrease = tstatistic;
         }

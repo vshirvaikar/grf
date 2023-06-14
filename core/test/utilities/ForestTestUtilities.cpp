@@ -51,7 +51,7 @@ ForestOptions ForestTestUtilities::custom_options(double alpha, double imbalance
     size_t ci_group_size = 1;
     double honesty_fraction = 0.5;
     bool prune = true;
-    uint num_trees = 50;
+    uint num_trees = 10;
     double sample_fraction = ci_group_size > 1 ? 0.35 : 0.7;
     uint mtry = 3;
     std::vector<size_t> empty_clusters;

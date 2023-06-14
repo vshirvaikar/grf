@@ -20,7 +20,7 @@
 
 #include "commons/Data.h"
 #include "splitting/SplittingRule.h"
-#include <armadillo>
+#include "Eigen/Dense"
 
 namespace grf {
 

@@ -16,7 +16,7 @@ endif()
 ## Linker flags
 ## ======================================================================================##
 if(NOT MSVC)
-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread ${GCC_ARMADILLO_LINK_FLAG}")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
 endif()
 
 ## ======================================================================================##
@@ -48,7 +48,5 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 ## ======================================================================================##
 ## Executable
 ## ======================================================================================##
-find_package(Armadillo REQUIRED)
-add_executable(grf ${SOURCES})
-target_link_libraries(${PROJECT_NAME} PUBLIC ${ARMADILLO_LIBRARIES})
-target_include_directories(${PROJECT_NAME} PUBLIC ${ARMADILLO_INCLUDE_DIR})
+add_executable(grf ${SOURCES} src/splitting/InstrumentalGLM.cpp src/splitting/InstrumentalGLM.h)
+

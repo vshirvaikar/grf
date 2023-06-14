@@ -20,7 +20,6 @@
 
 #include <set>
 #include <vector>
-#include <armadillo>
 
 #include "Eigen/Dense"
 #include "globals.h"
@@ -88,8 +87,10 @@ public:
   std::vector<size_t> get_all_values(std::vector<double>& all_values,
                                      std::vector<size_t>& sorted_samples,
                                      const std::vector<size_t>& samples, size_t var) const;
-  arma::mat prepare_glm(arma::colvec& outcomes, arma::colvec& treatments, arma::colvec& split_vals,
-                        size_t num_samples, std::vector<size_t> sorted_samples, size_t var) const;
+                                     
+  Eigen::MatrixXd prepare_glm(size_t num_samples, std::vector<size_t> sorted_samples,
+                              Eigen::VectorXd& outcomes, Eigen::VectorXd& treatments,
+                              Eigen::VectorXd& sorted_split_vals, size_t split_var) const;
 
   size_t get_num_cols() const;
 

@@ -20,7 +20,6 @@
 #include <numeric>
 #include <iterator>
 #include <stdexcept>
-#include <armadillo>
 
 #include "Data.h"
 
@@ -119,25 +118,29 @@ std::vector<size_t> Data::get_all_values(std::vector<double>& all_values,
   return index;
 }
 
-arma::mat Data::prepare_glm(arma::colvec& outcomes, arma::colvec& treatments, arma::colvec& split_vals,
-                            size_t num_samples, std::vector<size_t> sorted_samples, size_t var) const {
-    arma::mat covariates = arma::mat(num_samples, num_cols);
-    for(size_t i = 0; i < num_samples; i++){
-        outcomes(i) = get_outcome(sorted_samples[i]);
-        treatments(i) = get_treatment(sorted_samples[i]);
-        for(size_t j = 0; j < num_cols; j++){
-            covariates(i, j) = get(sorted_samples[i], j);
-            if(j == var){
-                split_vals(i) = get(sorted_samples[i], j);
-            }
+Eigen::MatrixXd Data::prepare_glm(size_t num_samples, std::vector<size_t> sorted_samples,
+                                  Eigen::VectorXd& outcomes, Eigen::VectorXd& treatments,
+                                  Eigen::VectorXd& sorted_split_vals, size_t split_var) const{
+    Eigen::MatrixXd covariates(num_samples, num_cols - disallowed_split_variables.size());
+    size_t skipped_columns = 0;
+    size_t split_var_index = 0;
+    for(size_t j = 0; j < num_cols; j++){
+        if(disallowed_split_variables.find(j) != disallowed_split_variables.end()) {
+            skipped_columns++;
+            continue;
+        }
+        for(size_t i = 0; i < num_samples; i++) {
+            covariates(i, j - skipped_columns) = get(sorted_samples[i], j);
+        }
+        if(j == split_var){
+            split_var_index = j - skipped_columns;
         }
     }
-
-    arma::uvec drop = arma::uvec(disallowed_split_variables.size());
-    for(size_t v = 0; v < disallowed_split_variables.size(); v++){
-        drop(v) = *next(disallowed_split_variables.begin(),v);
+    sorted_split_vals = covariates.col(split_var_index);
+    for(size_t i = 0; i < num_samples; i++) {
+        outcomes(i) = get_outcome(sorted_samples[i]);
+        treatments(i) = get_treatment(sorted_samples[i]);
     }
-    covariates.shed_cols(drop);
     return covariates;
 }
 
