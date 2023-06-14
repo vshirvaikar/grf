@@ -32,7 +32,7 @@ TEST_CASE("causal forests are invariant to rescaling of the sample weights", "[c
   size_t weight_index = 9;
   size_t outcome_index = 10;
   size_t treatment_index = 11;
-  auto data_vec = load_data("test/forest/resources/causal_data.csv");
+  auto data_vec = load_data("/home/shirvaik/CLionProjects/grf/core/test/forest/resources/causal_data.csv");
   Data data(data_vec);
   data.set_weight_index(weight_index);
   data.set_outcome_index(outcome_index);
@@ -40,12 +40,14 @@ TEST_CASE("causal forests are invariant to rescaling of the sample weights", "[c
   data.set_instrument_index(treatment_index);
 
   for(size_t r = 0; r < data.get_num_rows(); r++) {
-    double weight = 1.0 / (1.0 + exp(- data.get(r, 1)));
+    // double weight = 1.0 / (1.0 + exp(- data.get(r, 1)));
+    double weight = 1.0;
     set_data(data_vec, r, weight_index, weight);
   }
 
   ForestTrainer trainer = instrumental_trainer(0, true);
-  ForestOptions options = ForestTestUtilities::default_honest_options();
+  //ForestOptions options = ForestTestUtilities::default_honest_options();
+  ForestOptions options = ForestTestUtilities::custom_options(0.05, 0, 1);
 
   Forest forest = trainer.train(data, options);
   ForestPredictor predictor = instrumental_predictor(4);

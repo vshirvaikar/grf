@@ -17,8 +17,10 @@
 
 #include <algorithm>
 #include <cmath>
+#include <armadillo>
 
 #include "InstrumentalSplittingRule.h"
+#include "InstrumentalGLM.h"
 
 namespace grf {
 
@@ -117,6 +119,62 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
   split_values[node] = best_value;
   send_missing_left[node] = best_send_missing_left;
   return false;
+}
+
+void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
+                                                     size_t node, size_t var,
+                                                     size_t num_samples,
+                                                     double weight_sum_node,
+                                                     double sum_node,
+                                                     double mean_node_z,
+                                                     size_t num_node_small_z,
+                                                     double sum_node_z,
+                                                     double sum_node_z_squared,
+                                                     double min_child_size,
+                                                     double& best_value,
+                                                     size_t& best_var,
+                                                     double& best_decrease,
+                                                     bool& best_send_missing_left,
+                                                     const Eigen::ArrayXXd& responses_by_sample,
+                                                     const std::vector<std::vector<size_t>>& samples) {
+    std::vector<double> possible_split_values;
+    std::vector<size_t> sorted_samples;
+    data.get_all_values(possible_split_values, sorted_samples, samples[node], var);
+    // Try next variable if all equal for this
+    if (possible_split_values.size() < 2) {
+        return;
+    }
+
+    arma::colvec outcomes = arma::colvec(num_samples);
+    arma::colvec treatments = arma::colvec(num_samples);
+    arma::colvec split_vals = arma::colvec(num_samples);
+    arma::mat covariates = data.prepare_glm(outcomes, treatments, split_vals, num_samples, sorted_samples, var);
+
+    size_t indicator_index = covariates.n_cols + 1;
+    size_t interaction_index = indicator_index + 1;
+    arma::colvec blanks = arma::colvec(num_samples).zeros();
+    covariates = arma::join_rows(covariates, treatments, blanks, blanks);
+    InstrumentalGLM model(2);
+
+    for(size_t i = 0; i < num_samples - 1; i++){
+        covariates(i, indicator_index) = 1;
+        covariates(i, interaction_index) = treatments(i);
+        if(split_vals(i) == split_vals(i+1)){
+            continue;
+        }
+        arma::mat imbalance = arma::sum(covariates, 0);
+        if(abs(imbalance(indicator_index) - covariates.n_cols) < covariates.n_cols){
+            continue;
+        }
+
+        double tstatistic = model.glm_fit(covariates, outcomes, "linear", 100, 0.001);
+
+        if (tstatistic > best_decrease) {
+            best_value = split_vals(i);
+            best_var = var;
+            best_decrease = tstatistic;
+        }
+    }
 }
 
 void InstrumentalSplittingRule::find_best_split_value(const Data& data,

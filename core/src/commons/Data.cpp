@@ -20,6 +20,7 @@
 #include <numeric>
 #include <iterator>
 #include <stdexcept>
+#include <armadillo>
 
 #include "Data.h"
 
@@ -116,6 +117,28 @@ std::vector<size_t> Data::get_all_values(std::vector<double>& all_values,
   }), all_values.end());
 
   return index;
+}
+
+arma::mat Data::prepare_glm(arma::colvec& outcomes, arma::colvec& treatments, arma::colvec& split_vals,
+                            size_t num_samples, std::vector<size_t> sorted_samples, size_t var) const {
+    arma::mat covariates = arma::mat(num_samples, num_cols);
+    for(size_t i = 0; i < num_samples; i++){
+        outcomes(i) = get_outcome(sorted_samples[i]);
+        treatments(i) = get_treatment(sorted_samples[i]);
+        for(size_t j = 0; j < num_cols; j++){
+            covariates(i, j) = get(sorted_samples[i], j);
+            if(j == var){
+                split_vals(i) = get(sorted_samples[i], j);
+            }
+        }
+    }
+
+    arma::uvec drop = arma::uvec(disallowed_split_variables.size());
+    for(size_t v = 0; v < disallowed_split_variables.size(); v++){
+        drop(v) = *next(disallowed_split_variables.begin(),v);
+    }
+    covariates.shed_cols(drop);
+    return covariates;
 }
 
 size_t Data::get_num_cols() const {

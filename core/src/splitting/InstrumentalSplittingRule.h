@@ -20,6 +20,7 @@
 
 #include "commons/Data.h"
 #include "splitting/SplittingRule.h"
+#include <armadillo>
 
 namespace grf {
 
@@ -58,6 +59,24 @@ private:
                              bool& best_send_missing_left,
                              const Eigen::ArrayXXd& responses_by_sample,
                              const std::vector<std::vector<size_t>>& samples);
+                             
+  void find_glm_split_value(const Data& data,
+                           size_t node,
+                           size_t var,
+                           size_t num_samples,
+                           double weight_sum_node,
+                           double sum_node,
+                           double mean_node_z,
+                           size_t num_node_small_z,
+                           double sum_node_w,
+                           double sum_node_w_squared,
+                           double min_child_size,
+                           double& best_value,
+                           size_t& best_var,
+                           double& best_decrease,
+                           bool& best_send_missing_left,
+                           const Eigen::ArrayXXd& responses_by_sample,
+                           const std::vector<std::vector<size_t>>& samples);
 
   size_t* counter;
   double* weight_sums;
