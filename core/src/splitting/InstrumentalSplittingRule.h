@@ -75,6 +75,7 @@ private:
                            size_t& best_var,
                            double& best_decrease,
                            bool& best_send_missing_left,
+                           size_t& flagA, size_t& flagB, size_t& flagC, size_t& flagD, size_t& flagE,
                            const Eigen::ArrayXXd& responses_by_sample,
                            const std::vector<std::vector<size_t>>& samples);
 
