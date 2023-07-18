@@ -102,17 +102,11 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
   double best_decrease = 0.0;
   bool best_send_missing_left = true;
 
-  size_t flagA = 0;
-  size_t flagB = 0;
-  size_t flagC = 0;
-  size_t flagD = 0;
-  size_t flagE = 0;
-
   for (auto& var : possible_split_vars) {
     if(imbalance_penalty == 100) {
         find_glm_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
-                             sum_node_z, sum_node_z_squared, min_child_size, best_value, best_var, best_decrease,
-                             best_send_missing_left, flagA, flagB, flagC, flagD, flagE, responses_by_sample, samples);
+                             sum_node_z, sum_node_z_squared, min_child_size, best_value,
+                             best_var, best_decrease, best_send_missing_left, responses_by_sample, samples);
     } else {
         find_best_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
                               sum_node_z, sum_node_z_squared, min_child_size, best_value,
@@ -146,8 +140,6 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
                                                      size_t& best_var,
                                                      double& best_decrease,
                                                      bool& best_send_missing_left,
-                                                     size_t& flagA, size_t& flagB, size_t& flagC,
-                                                     size_t& flagD, size_t& flagE,
                                                      const Eigen::ArrayXXd& responses_by_sample,
                                                      const std::vector<std::vector<size_t>>& samples) {
     std::vector<double> possible_split_values;
@@ -183,23 +175,20 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
         }
 
         if(sorted_split_vals(i) == sorted_split_vals(i+1)){
-            flagB += 1;
             continue;
         }
         size_t num_left_large_z = n_left - num_left_small_z;
         if (num_left_small_z < min_node_size || num_left_large_z < min_node_size) {
-            flagC += 1;
             continue;
         }
         size_t n_right = num_samples - n_left;
         size_t num_right_small_z = num_node_small_z - num_left_small_z;
         size_t num_right_large_z = n_right - num_right_small_z;
         if (num_right_small_z < min_node_size || num_right_large_z < min_node_size) {
-            flagC += 1;
             break;
         }
-        flagA += 1;
-        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 100, 0.001, flagD, flagE);
+
+        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 10, 0.001);
         if (tstatistic > best_decrease) {
             best_value = sorted_split_vals(i);
             best_var = var;

@@ -39,7 +39,7 @@ TEST_CASE("causal GLM forests are functional", "[causal, forest]") {
 
     // Imbalance penalty of 100 is trick flag to use GLM splitting rule
     ForestTrainer trainer = instrumental_trainer(0, true);
-    ForestOptions options = ForestTestUtilities::custom_options(1, 100, 5);
+    ForestOptions options = ForestTestUtilities::custom_options(4, 100, 100);
     Forest forest = trainer.train(data, options);
 
     const std::vector<std::unique_ptr<Tree>>& trees = forest.get_trees();
