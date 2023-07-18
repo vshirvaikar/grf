@@ -104,8 +104,8 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
 
   for (auto& var : possible_split_vars) {
     if(imbalance_penalty == 100) {
-        find_glm_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
-                             sum_node_z, sum_node_z_squared, min_child_size, best_value,
+        find_glm_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node,
+                             num_node_small_z, sum_node_z, sum_node_z_squared, min_child_size, best_value,
                              best_var, best_decrease, best_send_missing_left, responses_by_sample, samples);
     } else {
         find_best_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
@@ -127,21 +127,21 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
 }
 
 void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
-                                                     size_t node, size_t var,
-                                                     size_t num_samples,
-                                                     double weight_sum_node,
-                                                     double sum_node,
-                                                     double mean_node_z,
-                                                     size_t num_node_small_z,
-                                                     double sum_node_z,
-                                                     double sum_node_z_squared,
-                                                     double min_child_size,
-                                                     double& best_value,
-                                                     size_t& best_var,
-                                                     double& best_decrease,
-                                                     bool& best_send_missing_left,
-                                                     const Eigen::ArrayXXd& responses_by_sample,
-                                                     const std::vector<std::vector<size_t>>& samples) {
+                                                   size_t node, size_t var,
+                                                   size_t num_samples,
+                                                   double weight_sum_node,
+                                                   double sum_node,
+                                                   double mean_node_z,
+                                                   size_t num_node_small_z,
+                                                   double sum_node_z,
+                                                   double sum_node_z_squared,
+                                                   double min_child_size,
+                                                   double& best_value,
+                                                   size_t& best_var,
+                                                   double& best_decrease,
+                                                   bool& best_send_missing_left,
+                                                   const Eigen::ArrayXXd& responses_by_sample,
+                                                   const std::vector<std::vector<size_t>>& samples) {
     std::vector<double> possible_split_values;
     std::vector<size_t> sorted_samples;
     data.get_all_values(possible_split_values, sorted_samples, samples[node], var);
@@ -155,6 +155,73 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
     Eigen::VectorXd sorted_split_vals = Eigen::VectorXd(num_samples);
     Eigen::MatrixXd covariates = data.prepare_glm(num_samples, sorted_samples, outcomes,
                                                   treatments, sorted_split_vals, var);
+
+    size_t n_left = 0;
+    size_t num_left_small_z = 0;
+    mean_node_z = sum_node_z / num_samples;
+    InstrumentalGLM model(2);
+
+    for(size_t i = 0; i < num_samples - 1; i++){
+        covariates(i, 2) = 0; // changing S to 0
+        covariates(i, 3) = 0; // changing SW to 0
+        n_left++;
+        double z = treatments(i);
+        if(z < mean_node_z){
+            num_left_small_z++;
+        }
+
+        if(sorted_split_vals(i) == sorted_split_vals(i+1)){
+            continue;
+        }
+        size_t num_left_large_z = n_left - num_left_small_z;
+        if (num_left_small_z < min_node_size || num_left_large_z < min_node_size) {
+            continue;
+        }
+        size_t n_right = num_samples - n_left;
+        size_t num_right_small_z = num_node_small_z - num_left_small_z;
+        size_t num_right_large_z = n_right - num_right_small_z;
+        if (num_right_small_z < min_node_size || num_right_large_z < min_node_size) {
+            break;
+        }
+
+        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 15, 0.001);
+        if (tstatistic > best_decrease) {
+            best_value = sorted_split_vals(i);
+            best_var = var;
+            best_decrease = tstatistic;
+        }
+    }
+}
+
+void InstrumentalSplittingRule::find_glm_split_value_full(const Data& data,
+                                                          size_t node, size_t var,
+                                                          size_t num_samples,
+                                                          double weight_sum_node,
+                                                          double sum_node,
+                                                          double mean_node_z,
+                                                          size_t num_node_small_z,
+                                                          double sum_node_z,
+                                                          double sum_node_z_squared,
+                                                          double min_child_size,
+                                                          double& best_value,
+                                                          size_t& best_var,
+                                                          double& best_decrease,
+                                                          bool& best_send_missing_left,
+                                                          const Eigen::ArrayXXd& responses_by_sample,
+                                                          const std::vector<std::vector<size_t>>& samples) {
+    std::vector<double> possible_split_values;
+    std::vector<size_t> sorted_samples;
+    data.get_all_values(possible_split_values, sorted_samples, samples[node], var);
+    // Try next variable if all equal for this
+    if (possible_split_values.size() < 2) {
+        return;
+    }
+
+    Eigen::VectorXd outcomes = Eigen::VectorXd(num_samples);
+    Eigen::VectorXd treatments = Eigen::VectorXd(num_samples);
+    Eigen::VectorXd sorted_split_vals = Eigen::VectorXd(num_samples);
+    Eigen::MatrixXd covariates = data.prepare_glm_full(num_samples, sorted_samples, outcomes,
+                                                       treatments, sorted_split_vals, var);
     covariates.conservativeResize(covariates.rows(), covariates.cols()+3);
     covariates.col(covariates.cols()-3) = treatments;
     covariates.col(covariates.cols()-2) = Eigen::VectorXd::Ones(num_samples);

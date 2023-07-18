@@ -121,6 +121,24 @@ std::vector<size_t> Data::get_all_values(std::vector<double>& all_values,
 Eigen::MatrixXd Data::prepare_glm(size_t num_samples, std::vector<size_t> sorted_samples,
                                   Eigen::VectorXd& outcomes, Eigen::VectorXd& treatments,
                                   Eigen::VectorXd& sorted_split_vals, size_t split_var) const{
+    Eigen::MatrixXd covariates(num_samples, 4);
+    Eigen::VectorXd weights(num_samples);
+    for(size_t i = 0; i < num_samples; i++) {
+        outcomes(i) = get_outcome(sorted_samples[i]);
+        treatments(i) = get_treatment(sorted_samples[i]);
+        sorted_split_vals(i) = get(sorted_samples[i], split_var);
+        weights(i) = get_weight(sorted_samples[i]);
+    }
+    covariates.col(0) = weights;
+    covariates.col(1) = treatments;
+    covariates.col(2) = Eigen::VectorXd::Ones(num_samples);
+    covariates.col(3) = treatments;
+    return covariates;
+}
+
+Eigen::MatrixXd Data::prepare_glm_full(size_t num_samples, std::vector<size_t> sorted_samples,
+                                       Eigen::VectorXd& outcomes, Eigen::VectorXd& treatments,
+                                       Eigen::VectorXd& sorted_split_vals, size_t split_var) const{
     Eigen::MatrixXd covariates(num_samples, num_cols - disallowed_split_variables.size());
     size_t skipped_columns = 0;
     size_t split_var_index = 0;
