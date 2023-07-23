@@ -70,7 +70,7 @@ Eigen::VectorXd InstrumentalGLM::invlink_prime(std::string family, Eigen::Vector
 }
 
 double InstrumentalGLM::glm_fit(const Eigen::MatrixXd& X, const Eigen::VectorXd& y,
-                                std::string family, size_t maxit, double tol, int& flagB, int& flagC) {
+                                std::string family, size_t maxit, double tol) {
 
     int n_cols = X.cols();
     int n_rows = X.rows();
@@ -103,13 +103,11 @@ double InstrumentalGLM::glm_fit(const Eigen::MatrixXd& X, const Eigen::VectorXd&
         if (error < tol) {
             V = (X.transpose() * W.asDiagonal() * X).inverse();
             converged = true;
-            flagB += 1;
             break;
         }
     }
 
     if(!converged){
-        flagC += 1;
         return 0;
     }
     Eigen::VectorXd coeffs = R.householderQr().solve(Q.transpose() * eta);
