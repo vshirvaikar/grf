@@ -40,7 +40,7 @@ namespace grf {
 	Eigen::VectorXd invlink_prime(std::string family, Eigen::VectorXd eta);
 
 	double glm_fit(const Eigen::MatrixXd& X, const Eigen::VectorXd& y,
-		       std::string family, size_t maxit, double tol);
+		       std::string family, size_t maxit, double tol, int& flagB, int& flagC);
 
     private:
 

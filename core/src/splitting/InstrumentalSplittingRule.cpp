@@ -102,11 +102,18 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
   double best_decrease = 0.0;
   bool best_send_missing_left = true;
 
+  int flagA = 0;
+  int flagB = 0;
+  int flagC = 0;
+  int flagD = 0;
+  int flagE = 0;
+
   for (auto& var : possible_split_vars) {
     if(imbalance_penalty == 100) {
         find_glm_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node,
                              num_node_small_z, sum_node_z, sum_node_z_squared, min_child_size, best_value,
-                             best_var, best_decrease, best_send_missing_left, responses_by_sample, samples);
+                             best_var, best_decrease, best_send_missing_left, responses_by_sample, samples,
+                             flagA, flagB, flagC, flagD, flagE);
     } else {
         find_best_split_value(data, node, var, num_samples, weight_sum_node, sum_node, mean_z_node, num_node_small_z,
                               sum_node_z, sum_node_z_squared, min_child_size, best_value,
@@ -141,7 +148,8 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
                                                    double& best_decrease,
                                                    bool& best_send_missing_left,
                                                    const Eigen::ArrayXXd& responses_by_sample,
-                                                   const std::vector<std::vector<size_t>>& samples) {
+                                                   const std::vector<std::vector<size_t>>& samples,
+                                                   int& flagA, int& flagB, int& flagC, int& flagD, int& flagE) {
     std::vector<double> possible_split_values;
     std::vector<size_t> sorted_samples;
     data.get_all_values(possible_split_values, sorted_samples, samples[node], var);
@@ -158,7 +166,6 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
 
     size_t n_left = 0;
     size_t num_left_small_z = 0;
-    mean_node_z = sum_node_z / num_samples;
     InstrumentalGLM model(2);
 
     for(size_t i = 0; i < num_samples - 1; i++){
@@ -175,16 +182,18 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
         }
         size_t num_left_large_z = n_left - num_left_small_z;
         if (num_left_small_z < min_node_size || num_left_large_z < min_node_size) {
+            flagA += 1;
             continue;
         }
         size_t n_right = num_samples - n_left;
         size_t num_right_small_z = num_node_small_z - num_left_small_z;
         size_t num_right_large_z = n_right - num_right_small_z;
         if (num_right_small_z < min_node_size || num_right_large_z < min_node_size) {
+            flagA += 1;
             break;
         }
 
-        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 15, 0.001);
+        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 15, 0.001, flagB, flagC);
         if (tstatistic > best_decrease) {
             best_value = sorted_split_vals(i);
             best_var = var;
@@ -255,7 +264,8 @@ void InstrumentalSplittingRule::find_glm_split_value_full(const Data& data,
             break;
         }
 
-        double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 10, 0.001);
+        //double tstatistic = model.glm_fit(covariates, outcomes, "poisson", 10, 0.001);
+        double tstatistic = 0.05;
         if (tstatistic > best_decrease) {
             best_value = sorted_split_vals(i);
             best_var = var;
