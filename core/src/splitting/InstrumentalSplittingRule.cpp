@@ -76,6 +76,7 @@ bool InstrumentalSplittingRule::find_best_split(const Data& data,
   double sum_node_z_squared = 0.0;
   for (auto& sample : samples[node]) {
     double sample_weight = data.get_weight(sample);
+    sample_weight = 1.0;
     weight_sum_node += sample_weight;
     sum_node += sample_weight * responses_by_sample(sample, 0);
 
@@ -158,7 +159,6 @@ void InstrumentalSplittingRule::find_glm_split_value(const Data& data,
 
     size_t n_left = 0;
     size_t num_left_small_z = 0;
-    mean_node_z = sum_node_z / num_samples;
     InstrumentalGLM model(2);
 
     for(size_t i = 0; i < num_samples - 1; i++){
