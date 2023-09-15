@@ -1,14 +1,14 @@
-url: https://github.com/grf-labs/grf
+url: https://github.com/rrcf-labs/rrcf
 navbar:
   type: default
   left:
   - text: "Get started"
-    href: articles/grf.html
+    href: articles/rrcf.html
   - text: "Reference"
     href: reference/index.html
   - text: "Tutorials" # A collection of smaller vignettes, this list is kept alphabetical
     menu:
-      - text: "A grf guided tour"
+      - text: "A rrcf guided tour"
         href: articles/grf_guide.html
       - text: "Assessing heterogeneity with RATE"
         href: articles/rate.html
@@ -36,7 +36,7 @@ navbar:
     href: CHANGELOG.html
   right:
   - icon: fa-github fa-lg
-    href: https://github.com/grf-labs/grf
+    href: https://github.com/rrcf-labs/rrcf
 
 ## Function reference
 # Different forest types
@@ -115,7 +115,7 @@ reference:
       - plot.grf_tree
       - plot.rank_average_treatment_effect
       - print.boosted_regression_forest
-      - print.grf
+      - print.rrcf
       - print.grf_tree
       - print.rank_average_treatment_effect
       - print.tuning_output

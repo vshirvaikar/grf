@@ -11,5 +11,5 @@ typedef unsigned int uint;
 
 static const uint DEFAULT_NUM_THREADS = 0;
 
-} // namespace grf
+} // namespace rrcf
 #endif /* GRF_GLOBALS_H_ */

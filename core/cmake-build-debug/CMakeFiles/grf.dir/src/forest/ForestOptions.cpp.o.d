@@ -1,5 +1,5 @@
 CMakeFiles/grf.dir/src/forest/ForestOptions.cpp.o: \
- /home/shirvaik/CLionProjects/grf/core/src/forest/ForestOptions.cpp \
+ /home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestOptions.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -137,11 +137,11 @@ CMakeFiles/grf.dir/src/forest/ForestOptions.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/shirvaik/CLionProjects/grf/core/src/forest/ForestOptions.h \
- /home/shirvaik/CLionProjects/grf/core/src/commons/globals.h \
- /home/shirvaik/CLionProjects/grf/core/src/sampling/SamplingOptions.h \
+ /home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestOptions.h \
+ /home/shirvaik/CLionProjects/rrcf/core/src/commons/globals.h \
+ /home/shirvaik/CLionProjects/rrcf/core/src/sampling/SamplingOptions.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/shirvaik/CLionProjects/grf/core/src/tree/TreeOptions.h
+ /home/shirvaik/CLionProjects/rrcf/core/src/tree/TreeOptions.h

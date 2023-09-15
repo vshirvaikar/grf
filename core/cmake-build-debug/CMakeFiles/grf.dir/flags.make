@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/shirvaik/CLionProjects/grf/core/src -I/home/shirvaik/CLionProjects/grf/core/test -I/home/shirvaik/CLionProjects/grf/core/third_party
+CXX_INCLUDES = -I/home/shirvaik/CLionProjects/rrcf/core/src -I/home/shirvaik/CLionProjects/rrcf/core/test -I/home/shirvaik/CLionProjects/rrcf/core/third_party
 
 CXX_FLAGS =  -Wall -O2 -g -O0 -std=gnu++11
 

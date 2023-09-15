@@ -8,55 +8,55 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="debug">
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 debug"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 debug"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="release">
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 release"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 release"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="grf">
-				<Option output="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/grf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option output="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/grf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/shirvaik/CLionProjects/grf/core/src"/>
-					<Add directory="/home/shirvaik/CLionProjects/grf/core/test"/>
-					<Add directory="/home/shirvaik/CLionProjects/grf/core/third_party"/>
+					<Add directory="/home/shirvaik/CLionProjects/rrcf/core/src"/>
+					<Add directory="/home/shirvaik/CLionProjects/rrcf/core/test"/>
+					<Add directory="/home/shirvaik/CLionProjects/rrcf/core/third_party"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -66,22 +66,22 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 grf"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 grf"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="grf/fast">
-				<Option output="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/grf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option output="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/grf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/shirvaik/CLionProjects/grf/core/src"/>
-					<Add directory="/home/shirvaik/CLionProjects/grf/core/test"/>
-					<Add directory="/home/shirvaik/CLionProjects/grf/core/third_party"/>
+					<Add directory="/home/shirvaik/CLionProjects/rrcf/core/src"/>
+					<Add directory="/home/shirvaik/CLionProjects/rrcf/core/test"/>
+					<Add directory="/home/shirvaik/CLionProjects/rrcf/core/third_party"/>
 					<Add directory="/usr/include/c++/11"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
 					<Add directory="/usr/include/c++/11/backward"/>
@@ -91,426 +91,426 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 grf/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 grf/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/shirvaik/CLionProjects/grf/core/cmake-build-debug"/>
+				<Option working_dir="/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/analysis/SplitFrequencyComputer.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/analysis/SplitFrequencyComputer.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/analysis/SplitFrequencyComputer.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/analysis/SplitFrequencyComputer.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/commons/Data.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/commons/Data.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/commons/Data.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/commons/Data.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/commons/utility.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/commons/utility.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/commons/utility.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/commons/utility.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/Forest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/Forest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/Forest.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/Forest.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestOptions.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestOptions.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestOptions.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestOptions.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestPredictor.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestPredictor.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestPredictor.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestPredictor.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestPredictors.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestPredictors.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestPredictors.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestPredictors.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestTrainer.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestTrainer.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestTrainer.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestTrainer.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestTrainers.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestTrainers.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/forest/ForestTrainers.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/forest/ForestTrainers.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/CausalSurvivalPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/CausalSurvivalPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/CausalSurvivalPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/CausalSurvivalPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/InstrumentalPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/InstrumentalPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/InstrumentalPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/InstrumentalPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/LLCausalPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/LLCausalPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/LLCausalPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/LLCausalPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/LocalLinearPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/LocalLinearPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/LocalLinearPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/LocalLinearPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/MultiCausalPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/MultiCausalPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/MultiCausalPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/MultiCausalPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/MultiRegressionPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/MultiRegressionPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/MultiRegressionPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/MultiRegressionPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/ObjectiveBayesDebiaser.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/ObjectiveBayesDebiaser.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/ObjectiveBayesDebiaser.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/ObjectiveBayesDebiaser.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/Prediction.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/Prediction.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/Prediction.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/Prediction.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/PredictionValues.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/PredictionValues.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/PredictionValues.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/PredictionValues.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/ProbabilityPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/ProbabilityPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/ProbabilityPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/ProbabilityPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/QuantilePredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/QuantilePredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/QuantilePredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/QuantilePredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/RegressionPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/RegressionPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/RegressionPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/RegressionPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/SurvivalPredictionStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/SurvivalPredictionStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/SurvivalPredictionStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/SurvivalPredictionStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/DefaultPredictionCollector.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/DefaultPredictionCollector.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/DefaultPredictionCollector.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/DefaultPredictionCollector.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/OptimizedPredictionCollector.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/OptimizedPredictionCollector.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/OptimizedPredictionCollector.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/OptimizedPredictionCollector.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/SampleWeightComputer.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/SampleWeightComputer.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/SampleWeightComputer.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/SampleWeightComputer.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/TreeTraverser.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/TreeTraverser.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/prediction/collector/TreeTraverser.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/prediction/collector/TreeTraverser.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/CausalSurvivalRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/CausalSurvivalRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/CausalSurvivalRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/CausalSurvivalRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/InstrumentalRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/InstrumentalRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/InstrumentalRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/InstrumentalRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/LLRegressionRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/LLRegressionRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/LLRegressionRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/LLRegressionRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/MultiCausalRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/MultiCausalRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/MultiCausalRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/MultiCausalRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/MultiNoopRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/MultiNoopRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/MultiNoopRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/MultiNoopRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/NoopRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/NoopRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/NoopRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/NoopRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/QuantileRelabelingStrategy.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/QuantileRelabelingStrategy.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/relabeling/QuantileRelabelingStrategy.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/relabeling/QuantileRelabelingStrategy.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/sampling/RandomSampler.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/sampling/RandomSampler.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/sampling/RandomSampler.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/sampling/RandomSampler.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/sampling/SamplingOptions.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/sampling/SamplingOptions.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/sampling/SamplingOptions.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/sampling/SamplingOptions.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/CausalSurvivalSplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/CausalSurvivalSplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/CausalSurvivalSplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/CausalSurvivalSplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/InstrumentalGLM.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/InstrumentalGLM.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/InstrumentalGLM.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/InstrumentalGLM.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/InstrumentalSplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/InstrumentalSplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/InstrumentalSplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/InstrumentalSplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/MultiCausalSplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/MultiCausalSplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/MultiCausalSplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/MultiCausalSplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/MultiRegressionSplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/MultiRegressionSplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/MultiRegressionSplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/MultiRegressionSplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/ProbabilitySplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/ProbabilitySplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/ProbabilitySplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/ProbabilitySplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/RegressionSplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/RegressionSplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/RegressionSplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/RegressionSplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/SurvivalSplittingRule.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/SurvivalSplittingRule.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/SurvivalSplittingRule.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/SurvivalSplittingRule.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/CausalSurvivalSplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/CausalSurvivalSplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/CausalSurvivalSplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/CausalSurvivalSplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/InstrumentalSplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/InstrumentalSplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/InstrumentalSplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/InstrumentalSplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/MultiCausalSplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/MultiCausalSplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/MultiCausalSplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/MultiCausalSplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/MultiRegressionSplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/MultiRegressionSplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/MultiRegressionSplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/MultiRegressionSplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/ProbabilitySplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/ProbabilitySplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/ProbabilitySplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/ProbabilitySplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/RegressionSplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/RegressionSplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/RegressionSplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/RegressionSplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/SurvivalSplittingRuleFactory.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/SurvivalSplittingRuleFactory.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/splitting/factory/SurvivalSplittingRuleFactory.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/splitting/factory/SurvivalSplittingRuleFactory.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/tree/Tree.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/tree/Tree.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/tree/Tree.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/tree/Tree.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/tree/TreeOptions.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/tree/TreeOptions.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/tree/TreeOptions.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/tree/TreeOptions.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/tree/TreeTrainer.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/tree/TreeTrainer.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/src/tree/TreeTrainer.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/src/tree/TreeTrainer.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/analysis/SplitFrequencyUnitTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/analysis/SplitFrequencyUnitTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/commons/utilitytest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/commons/utilitytest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/forest/CausalForestTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/forest/CausalForestTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/forest/CausalSurvivalForestTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/forest/CausalSurvivalForestTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/forest/ForestCharacterizationTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/forest/ForestCharacterizationTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/forest/ForestSmokeTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/forest/ForestSmokeTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/forest/LocalLinearForestTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/forest/LocalLinearForestTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/forest/RegressionForestTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/forest/RegressionForestTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/prediction/InstrumentalPredictionStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/prediction/InstrumentalPredictionStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/prediction/MultiCausalPredictionStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/prediction/MultiCausalPredictionStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/prediction/MultiRegressionPredictionStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/prediction/MultiRegressionPredictionStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/prediction/QuantilePredictionStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/prediction/QuantilePredictionStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/prediction/RegressionPredictionStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/prediction/RegressionPredictionStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/prediction/SurvivalPredictionStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/prediction/SurvivalPredictionStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/relabeling/InstrumentalRelabelingStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/relabeling/InstrumentalRelabelingStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/relabeling/MultiCausalRelabelingStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/relabeling/MultiCausalRelabelingStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/relabeling/QuantileRelabelingStrategyTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/relabeling/QuantileRelabelingStrategyTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/sampling/RandomSamplerTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/sampling/RandomSamplerTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/setup.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/setup.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/splitting/MultiCausalSplittingRuleTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/splitting/MultiCausalSplittingRuleTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/splitting/MultiRegressionSplittingRuleTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/splitting/MultiRegressionSplittingRuleTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/splitting/SplittingRuleInvarianceTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/splitting/SplittingRuleInvarianceTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/splitting/SurvivalSplittingRuleTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/splitting/SurvivalSplittingRuleTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/tree/TreePruningUnitTest.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/tree/TreePruningUnitTest.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/utilities/FileTestUtilities.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/utilities/FileTestUtilities.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/utilities/FileTestUtilities.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/utilities/FileTestUtilities.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/utilities/ForestTestUtilities.cpp">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/utilities/ForestTestUtilities.cpp">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/test/utilities/ForestTestUtilities.h">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/test/utilities/ForestTestUtilities.h">
 			<Option target="grf"/>
 		</Unit>
-		<Unit filename="/home/shirvaik/CLionProjects/grf/core/CMakeLists.txt">
+		<Unit filename="/home/shirvaik/CLionProjects/rrcf/core/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

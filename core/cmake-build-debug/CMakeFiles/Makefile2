@@ -54,10 +54,10 @@ RM = /home/shirvaik/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/b
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shirvaik/CLionProjects/grf/core
+CMAKE_SOURCE_DIR = /home/shirvaik/CLionProjects/rrcf/core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shirvaik/CLionProjects/grf/core/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/grf.dir/clean
 CMakeFiles/debug.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles --progress-num=1 "Built target debug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles --progress-num=1 "Built target debug"
 .PHONY : CMakeFiles/debug.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/debug.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/debug.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/debug.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/debug.dir/clean:
 CMakeFiles/release.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/release.dir/build.make CMakeFiles/release.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles --progress-num=82 "Built target release"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles --progress-num=82 "Built target release"
 .PHONY : CMakeFiles/release.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/release.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/release.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/release.dir/rule
 
 # Convenience name for target.
@@ -135,14 +135,14 @@ CMakeFiles/release.dir/clean:
 CMakeFiles/grf.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grf.dir/build.make CMakeFiles/grf.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/grf.dir/build.make CMakeFiles/grf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81 "Built target grf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81 "Built target grf"
 .PHONY : CMakeFiles/grf.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/grf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles 80
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles 80
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/grf.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/grf.dir/rule
 
 # Convenience name for target.

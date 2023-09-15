@@ -12,7 +12,7 @@ library(devtools)
 library(testthat)
 library(roxygen2)
 
-package.name <- "grf"
+package.name <- "rrcf"
 
 # If built for CRAN, exlude all test except ones with "cran" in the filename
 # by adding the following regex to .Rbuildignore.

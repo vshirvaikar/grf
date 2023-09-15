@@ -52,15 +52,15 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/shirvaik/CLionProjects/grf/core/src"
+					"path" : "/home/shirvaik/CLionProjects/rrcf/core/src"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/shirvaik/CLionProjects/grf/core/test"
+					"path" : "/home/shirvaik/CLionProjects/rrcf/core/test"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/shirvaik/CLionProjects/grf/core/third_party"
+					"path" : "/home/shirvaik/CLionProjects/rrcf/core/third_party"
 				}
 			],
 			"language" : "CXX",
