@@ -50,7 +50,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "grf::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-grf-Debug-c610e4428992a3650c81.json",
+					"jsonFile" : "target-grf-Debug-d4c61d26cc39b2e80c60.json",
 					"name" : "grf",
 					"projectIndex" : 0
 				},
@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug",
-		"source" : "/home/shirvaik/CLionProjects/rrcf/core"
+		"build" : "/home/shirvaik/CLionProjects/grf/core/cmake-build-debug",
+		"source" : "/home/shirvaik/CLionProjects/grf/core"
 	},
 	"version" : 
 	{

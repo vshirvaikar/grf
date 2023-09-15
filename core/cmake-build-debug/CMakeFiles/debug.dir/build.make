@@ -53,10 +53,10 @@ RM = /home/shirvaik/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/b
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shirvaik/CLionProjects/rrcf/core
+CMAKE_SOURCE_DIR = /home/shirvaik/CLionProjects/grf/core
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shirvaik/CLionProjects/grf/core/cmake-build-debug
 
 # Utility rule file for debug.
 
@@ -67,9 +67,9 @@ include CMakeFiles/debug.dir/compiler_depend.make
 include CMakeFiles/debug.dir/progress.make
 
 CMakeFiles/debug:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Switch CMAKE_BUILD_TYPE to Debug"
-	/home/shirvaik/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug /home/shirvaik/CLionProjects/rrcf/core
-	/home/shirvaik/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake --build /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug --target all
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Switch CMAKE_BUILD_TYPE to Debug"
+	/home/shirvaik/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug /home/shirvaik/CLionProjects/grf/core
+	/home/shirvaik/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake --build /home/shirvaik/CLionProjects/grf/core/cmake-build-debug --target all
 
 debug: CMakeFiles/debug
 debug: CMakeFiles/debug.dir/build.make
@@ -84,6 +84,6 @@ CMakeFiles/debug.dir/clean:
 .PHONY : CMakeFiles/debug.dir/clean
 
 CMakeFiles/debug.dir/depend:
-	cd /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shirvaik/CLionProjects/rrcf/core /home/shirvaik/CLionProjects/rrcf/core /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug /home/shirvaik/CLionProjects/rrcf/core/cmake-build-debug/CMakeFiles/debug.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shirvaik/CLionProjects/grf/core/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shirvaik/CLionProjects/grf/core /home/shirvaik/CLionProjects/grf/core /home/shirvaik/CLionProjects/grf/core/cmake-build-debug /home/shirvaik/CLionProjects/grf/core/cmake-build-debug /home/shirvaik/CLionProjects/grf/core/cmake-build-debug/CMakeFiles/debug.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/debug.dir/depend
 

@@ -1,7 +1,7 @@
 CMakeFiles/grf.dir/src/prediction/Prediction.cpp.o: \
- /home/shirvaik/CLionProjects/rrcf/core/src/prediction/Prediction.cpp \
+ /home/shirvaik/CLionProjects/grf/core/src/prediction/Prediction.cpp \
  /usr/include/stdc-predef.h \
- /home/shirvaik/CLionProjects/rrcf/core/src/prediction/Prediction.h \
+ /home/shirvaik/CLionProjects/grf/core/src/prediction/Prediction.h \
  /usr/include/c++/11/cstddef \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

@@ -1,18 +1,18 @@
 /*-------------------------------------------------------------------------------
-  This file is part of generalized random forest (rrcf).
+  This file is part of generalized random forest (grf).
 
-  rrcf is free software: you can redistribute it and/or modify
+  grf is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  rrcf is distributed in the hope that it will be useful,
+  grf is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with rrcf. If not, see <http://www.gnu.org/licenses/>.
+  along with grf. If not, see <http://www.gnu.org/licenses/>.
  #-------------------------------------------------------------------------------*/
 
 #ifndef GRF_DATA_H_
@@ -194,5 +194,5 @@ inline double Data::get(size_t row, size_t col) const {
   return data_ptr[col * num_rows + row];
 }
 
-} // namespace rrcf
+} // namespace grf
 #endif /* GRF_DATA_H_ */

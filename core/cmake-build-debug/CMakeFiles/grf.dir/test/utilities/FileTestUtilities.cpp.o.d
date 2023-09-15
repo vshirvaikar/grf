@@ -1,5 +1,5 @@
 CMakeFiles/grf.dir/test/utilities/FileTestUtilities.cpp.o: \
- /home/shirvaik/CLionProjects/rrcf/core/test/utilities/FileTestUtilities.cpp \
+ /home/shirvaik/CLionProjects/grf/core/test/utilities/FileTestUtilities.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/fstream \
  /usr/include/c++/11/istream /usr/include/c++/11/ios \
  /usr/include/c++/11/iosfwd \
@@ -148,7 +148,7 @@ CMakeFiles/grf.dir/test/utilities/FileTestUtilities.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc \
- /home/shirvaik/CLionProjects/rrcf/core/test/utilities/FileTestUtilities.h \
+ /home/shirvaik/CLionProjects/grf/core/test/utilities/FileTestUtilities.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \

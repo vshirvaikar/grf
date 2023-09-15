@@ -1,7 +1,7 @@
 CMakeFiles/grf.dir/test/setup.cpp.o: \
- /home/shirvaik/CLionProjects/rrcf/core/test/setup.cpp \
+ /home/shirvaik/CLionProjects/grf/core/test/setup.cpp \
  /usr/include/stdc-predef.h \
- /home/shirvaik/CLionProjects/rrcf/core/test/catch.hpp \
+ /home/shirvaik/CLionProjects/grf/core/test/catch.hpp \
  /usr/include/c++/11/iosfwd \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

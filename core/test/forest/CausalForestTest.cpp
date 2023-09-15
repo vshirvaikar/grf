@@ -1,18 +1,18 @@
 /*-------------------------------------------------------------------------------
-  This file is part of generalized random forest (rrcf).
+  This file is part of generalized random forest (grf).
 
-  rrcf is free software: you can redistribute it and/or modify
+  grf is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
 
-  rrcf is distributed in the hope that it will be useful,
+  grf is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with rrcf. If not, see <http://www.gnu.org/licenses/>.
+  along with grf. If not, see <http://www.gnu.org/licenses/>.
  #-------------------------------------------------------------------------------*/
 
 #include "commons/utility.h"
@@ -30,7 +30,7 @@ TEST_CASE("causal GLM forests are functional", "[causal, forest]") {
     size_t weight_index = 7;
     size_t outcome_index = 10;
     size_t treatment_index = 11;
-    auto data_vec = load_data("/home/shirvaik/CLionProjects/rrcf/core/test/forest/resources/aquamat.csv");
+    auto data_vec = load_data("/home/shirvaik/CLionProjects/grf/core/test/forest/resources/aquamat.csv");
     Data data(data_vec);
     data.set_weight_index(weight_index);
     data.set_outcome_index(outcome_index);
@@ -53,7 +53,7 @@ TEST_CASE("causal forests are invariant to rescaling of the sample weights", "[c
   size_t weight_index = 9;
   size_t outcome_index = 10;
   size_t treatment_index = 11;
-  auto data_vec = load_data("/home/shirvaik/CLionProjects/rrcf/core/test/forest/resources/causal_data.csv");
+  auto data_vec = load_data("/home/shirvaik/CLionProjects/grf/core/test/forest/resources/causal_data.csv");
   Data data(data_vec);
   data.set_weight_index(weight_index);
   data.set_outcome_index(outcome_index);
