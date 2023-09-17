@@ -1,6 +1,6 @@
 # Generalized Random Forests
 
-This is an out-of-date development repository for the Relative Risk Causal Forests paper; please visit the following pages instead.
+This is an out-of-date development repository for the paper "Targeting Relative Risk Heterogeneity with Causal Forests"; please visit the following pages instead.
 * The original <a href="https://github.com/grf-labs/grf">Generalized Random Forests</a> package
 * The updated <a href="https://github.com/vshirvaikar/rrcf">Relative Risk Causal Forests</a> package
 
